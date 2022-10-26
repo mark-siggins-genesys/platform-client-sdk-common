@@ -530,7 +530,7 @@ public class WebMessagingClient {
         Object response = objectMapper.convertValue(baseMessage.getBody(), messageClass);
         switch (className) {
             case "SessionResponse":
-                sessionId = ((SessionResponse) response).getSessionId();
+                sessionId = "[DEPRECATION NOTICE: sessionId is no longer supported. This field will be removed in future releases.]";
                 // Invoke each listener
                 for (SessionListener sessionListener : sessionListeners) {
                     sessionListener.sessionResponse((SessionResponse) response, rawMessage);
